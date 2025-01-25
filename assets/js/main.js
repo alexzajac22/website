@@ -5,7 +5,18 @@ const contactForm = document.getElementById('contact-form'),
 const sendEmail = (e) =>{
     e.preventDefualt()
 
-    emailjs.sendForm("service_yt1px5u","template_n3w06ak","#contact-form","NjEgegrUq6EGdu7vN ")
+emailjs.sendForm("service_n5hosop","template_p513xra","#contact-form","NjEgegrUq6EGdu7vN")
+
+.then(() => {
+    // show sent message
+    contactMessage.text = 'Message sent successfully ✅'       
+    // Remove message after five seconds
+    setTimeout(()=>{
+        contactMessage.textContent=''
+    },5000)    
+    // Clear input fields
+    contactForm.reset()
+})
 }
 contactForm.addEventListener('submit', sendEmail)
 
